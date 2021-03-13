@@ -5,6 +5,7 @@ Hi, mình sẽ hướng dẫn các bạn cách làm bài Multi-Label nhé.
 ### Requirements
 Trong project này, mình sẽ sử dụng PyTorch Lightning](https://github.com/PyTorchLightning/pytorch-lightning).
 Lý do mình sử dụng framework này là bởi vì nó hỗ trợ rất nhiều trong việc chạy model dùng CPU, GPU, multi-GPU, ngoài ra mình thấy cách viết code của PyTorch Lightning sẽ giúp mình thiết kế code sạch, đẹp, một khung code có thể sử dụng cho nhiều project, đỡ tốn thời gian và công sưc.
+
 Ngoài ra, code của mình được dựa trên template [này](https://github.com/hobogalaxy/lightning-hydra-template). Các bạn đọc thêm repo trên để hiểu hơn về cấu trúc code nhé.
 
 Các package version mà mình sử dụng:
@@ -28,6 +29,9 @@ python train.py +experiment=exp_intent.yaml
 ```
 exp_intent.yaml nằm trong folder configs (folder này chứa toàn bộ config về data, model, traner, etc của project)
 Chi tiết các bạn xem thêm ở repo có template mình đính kèm phía trên nhé.
+
+Model sử dụng XLMRoberta. Metrics sử dụng BCELoss. 
+Trained model (đặt vào folder logs) và pre-trained XLMR (đặt vào folder lib) mình sẽ upload lên google class nhé.
 
 #### Inference 
 Output sẽ lưu ở data/processed_data.
