@@ -1,0 +1,5 @@
+# Train with many loggers at once
+defaults:
+    - csv_logger.yaml
+    - wandb.yaml
+    - tensorboard.yaml

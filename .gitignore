@@ -1,0 +1,6 @@
+.*
+!/.gitignore
+lib/
+logs/
+*.pyc
+.vscode

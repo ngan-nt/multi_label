@@ -1,0 +1,34 @@
+# @package _global_
+
+# to execute this experiment run:
+# python train.py +experiment=exp_example_simple
+
+defaults:
+    - override /trainer: default_trainer.yaml           # choose trainer from 'configs/trainer/' folder or set to null
+    - override /model: intent_model.yaml                 # choose model from 'configs/model/' folder or set to null
+    - override /datamodule: intent_datamodule.yaml       # choose datamodule from 'configs/datamodule/' folder or set to null
+    - override /seeds: default_seeds.yaml               # choose seeds from 'configs/seeds/' folder or set to null
+    - override /callbacks: default_callbacks.yaml       # choose callback set from 'configs/callbacks/' folder or set to null
+    - override /logger: null                            # choose logger from 'configs/logger/' folder or set it from console when running experiment:
+                                                        # `python train.py +experiment=exp_example_simple logger=wandb`
+
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+
+seeds: # read configs/seeds
+    pytorch_seed: 12345
+
+trainer: # read configs/trainer
+    gpus: 0 # 0: donot use GPU, [0]: use cuda:0, for more information - https://pytorch-lightning.readthedocs.io/en/latest/advanced/multi_gpu.html
+    max_epochs: 1 # number of epochs
+
+model: # read configs/model
+    lr: 0.0001
+    pretrained_path: /media/ngannt/Storage_2/Work/Dev_PJ/VietAI_MultiLabel_Classification/lib/envibert # YOUR ABSOLUTE PATH!
+
+
+datamodule: # read configs/datamodule
+    batch_size: 64
+    train_val_test_split: [0.8, 0.1, 0.1]
+    tokenizer_dir: /media/ngannt/Storage_2/Work/Dev_PJ/VietAI_MultiLabel_Classification/lib/envibert # YOUR ABSOLUTE PATH
+    data_dir: /media/ngannt/Storage_2/Work/Dev_PJ/VietAI_MultiLabel_Classification/data/processed_data # YOUR ABSOLUTE PATH
