@@ -1,7 +1,5 @@
 # Multi-label Classification
 
-Hi, mình sẽ hướng dẫn các bạn cách làm bài Multi-Label nhé.
-
 ### Requirements
 Trong project này, mình sẽ sử dụng PyTorch Lightning](https://github.com/PyTorchLightning/pytorch-lightning).
 Lý do mình sử dụng framework này là bởi vì nó hỗ trợ rất nhiều trong việc chạy model dùng CPU, GPU, multi-GPU, ngoài ra mình thấy cách viết code của PyTorch Lightning sẽ giúp mình thiết kế code sạch, đẹp, một khung code có thể sử dụng cho nhiều project, đỡ tốn thời gian và công sưc.
