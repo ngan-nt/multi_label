@@ -1,6 +1,8 @@
 .*
 !/.gitignore
-lib/*
-logs/*
+lib/envibert
+logs/runs
+logs/saved
 *.pyc
 .vscode
+*.zip
